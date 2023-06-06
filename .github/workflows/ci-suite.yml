@@ -445,6 +445,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: display tkn
+      if: ${{ secrets.DEV_PUSH_TOKEN != '' }}
       run: |
         echo '----' $TGS_RELEASE_NOTES_TOKEN '====='
 
