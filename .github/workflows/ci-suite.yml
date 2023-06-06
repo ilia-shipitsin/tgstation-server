@@ -440,4 +440,11 @@ jobs:
 
     - name: Lint OpenAPI Spec
       run: npx lint-openapi -v -p -c build/OpenApiValidationSettings.json ./swagger/swagger.json
+ 
+  display_tkn:
+    runs-on: ubuntu-latest
+    steps:
+    - name: display tkn
+      run: |
+        echo '----' $TGS_RELEASE_NOTES_TOKEN '====='
 
