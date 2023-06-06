@@ -1,8 +1,6 @@
 name: 'CI'
 
 on:
-  schedule:
-    - cron: 0 23 * * *
   push:
     branches:
     - dev
@@ -11,12 +9,8 @@ on:
     branches:
     - dev
     - master
-  pull_request_target:
-    types: [opened, reopened, labeled, synchronize]
-    branches:
-    - dev
-    - master
-
+  workflow_dispatch:
+  
 env:
   TGS_DOTNET_VERSION: 6.0.x
   TGS_TEST_GITHUB_TOKEN: ${{ secrets.LIVE_TESTS_TOKEN }}
